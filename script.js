@@ -2,7 +2,7 @@ let choice;
 let playerSelection;
 let result;
 
-function getComputerChoice(min, max){                                                      
+function getComputerChoice(min, max){
     const minCeiled = Math.ceil(min);                                                       // this block of code
     const maxFloored = Math.floor(max);                                                     // is copypasted from
     choiceNumber = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)     // mdn web docs
