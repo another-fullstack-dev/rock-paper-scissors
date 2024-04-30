@@ -58,27 +58,3 @@ function playRound(playerChoice = playerSelection, computerChoice = choice){
     }
 }
 
-function playGame(){
-    let playerScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) { // i should keep i mind that indexing begins from zero next time
-        playRound();
-        if(result === "You won.") {
-            ++playerScore;
-            console.log(`You have won the round. Your score is ${playerScore} against ${computerScore}`);
-        } else if(result === "You lost."){
-            ++computerScore;
-            console.log(`You have lost the round. Your score is ${playerScore} against ${computerScore}`);
-        } else if(result === "Thats a draw."){
-            console.log(`This is a draw. Scores remain unchanged. Your score is ${playerScore} against ${computerScore} `)
-        }
-
-        if(playerScore > computerScore && i == 4){
-            console.log(`You have won the game! Your score was ${playerScore} against ${computerScore}!`);
-        } else if(playerScore < computerScore && i == 4){
-            console.log(`You have lost the game! Your score was ${playerScore} against ${computerScore}!`);
-        } else if(playerScore === computerScore && i == 4){
-            console.log(`Game ended with a draw! Your score was ${playerScore} against ${computerScore}!`)
-        }
-    }
-}
