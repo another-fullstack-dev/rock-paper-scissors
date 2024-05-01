@@ -1,6 +1,13 @@
 let choice;
 let playerSelection;
+let computerChoice;
+let playerChoice;
 let result;
+let buttonClicked;
+
+const btnRock = document.querySelector(".btn-rock");
+const btnPaper = document.querySelector(".btn-paper");
+const btnScissors = document.querySelector(".btn-scissors");
 
 function getComputerChoice(min, max){
     const minCeiled = Math.ceil(min);                                                       // this block of code
@@ -18,43 +25,40 @@ function getComputerChoice(min, max){
         case 2:
             choice = "scissors";
     }
-    return choice;
+    return computerChoice = choice;
 }
 
-getComputerChoice(0, 2);
-
-function getPlayerChoice(){
-    playerSelection = prompt("Choose: Rock, Paper, or Scissors?");
-    playerSelection = playerSelection.toLowerCase();
-    return playerSelection;
+function getPlayerChoice(btn){
+    return playerChoice = btn.toLowerCase();
     }
 
-playerSelection = "paper";
+function playRound(){
+    getPlayerChoice(this.textContent);
+    getComputerChoice(0, 2);
 
-function playRound(playerChoice = playerSelection, computerChoice = choice){
-    getPlayerChoice();
-
-    playerSelection = playerSelection.toLowerCase();
     if(playerChoice === "rock" && computerChoice === "scissors"){
-        return result = "You won.";
+        return console.log(result = "You won.");
     } else if(playerChoice === "rock" && computerChoice === "paper"){
-        return result = "You lost.";
+        return console.log(result = "You lost.");
     }
     
     if(playerChoice === "paper" && computerChoice === "rock"){
-        return result = "You won.";
+        return console.log(result = "You won.");
     } else if(playerChoice === "paper" && computerChoice === "scissors"){
-       return result = "You lost.";
+       return console.log(result = "You lost.");
     }
 
     if(playerChoice === "scissors" && computerChoice === "paper"){
-        return result = "You won.";
+        return console.log(result = "You won.");
     } else if(playerChoice === "scissors" && computerChoice === "rock"){
-       return result = "You lost.";
+       return console.log( result = "You lost.");
     }
 
     if(playerChoice === computerChoice) {
-        return result = "Thats a draw.";
+        return console.log(result = "Thats a draw.");
     }
 }
 
+btnRock.addEventListener("click", playRound);
+btnPaper.addEventListener("click", playRound);
+btnScissors.addEventListener("click", playRound);
