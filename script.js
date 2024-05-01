@@ -4,6 +4,8 @@ let computerChoice;
 let playerChoice;
 let result;
 let buttonClicked;
+let playerScore = 0;
+let computerScore = 0;
 
 const btnRock = document.querySelector(".btn-rock");
 const btnPaper = document.querySelector(".btn-paper");
@@ -36,29 +38,44 @@ function playRound(){
     getPlayerChoice(this.textContent);
     getComputerChoice(0, 2);
 
+    if (playerScore === 5 || computerScore === 5){
+        if (playerScore > computerScore){
+            return resultBox.textContent = `You have won the game! Your score is ${playerScore} vs ${computerScore}`
+        }
+        return resultBox.textContent = `You have lost the game! Your score is ${playerScore} vs ${computerScore}`
+    }
+
     if(playerChoice === "rock" && computerChoice === "scissors"){
-        return console.log(result = "You won.");
+        ++playerScore;
+        return resultBox.textContent = `You won. Your score is ${playerScore} vs ${computerScore}`;
     } else if(playerChoice === "rock" && computerChoice === "paper"){
-        return console.log(result = "You lost.");
+        ++computerScore;
+        return resultBox.textContent = `You lost. Your score is ${playerScore} vs ${computerScore}`;
     }
     
     if(playerChoice === "paper" && computerChoice === "rock"){
-        return console.log(result = "You won.");
+        ++playerScore;
+        return resultBox.textContent = `You won. Your score is ${playerScore} vs ${computerScore}`;
     } else if(playerChoice === "paper" && computerChoice === "scissors"){
-       return console.log(result = "You lost.");
+        ++computerScore;
+        return resultBox.textContent = `You lost. Your score is ${playerScore} vs ${computerScore}`;
     }
 
     if(playerChoice === "scissors" && computerChoice === "paper"){
-        return console.log(result = "You won.");
+        ++playerScore;
+        return resultBox.textContent = `You won. Your score is ${playerScore} vs ${computerScore}`;
     } else if(playerChoice === "scissors" && computerChoice === "rock"){
-       return console.log( result = "You lost.");
+        ++computerScore;
+        return resultBox.textContent = `You lost. Your score is ${playerScore} vs ${computerScore}`;
     }
 
     if(playerChoice === computerChoice) {
-        return console.log(result = "Thats a draw.");
+        return resultBox.textContent = `Thats a draw. Scores remain unchanged. Your score is ${playerScore} vs ${computerScore}`;
     }
 }
 
 btnRock.addEventListener("click", playRound);
 btnPaper.addEventListener("click", playRound);
 btnScissors.addEventListener("click", playRound);
+
+const resultBox = document.querySelector(".result-box");
