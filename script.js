@@ -1,3 +1,23 @@
+// im sorry
+
+/*
+*  This is by far my worst project ever.
+*  Everything about it is ugly.
+*  While its true that such results are expected from someone
+*  who is just starting out, i still can't help but feel bad
+*  about it.
+*  At first i came here to see how can i slightly improve it
+*  by applying newer knowledge i learned but now coming back
+*  to it i can't do a thing. This whole code needs to be
+*  killed with fire.
+*  It's probably better and easier to rewrite this from scratch,
+*  but i don't care.
+*
+*  Thanks for coming to my TED talk.
+*  - 06.15.2024
+*/
+
+// bro thinks he is writing c++
 let choice;
 let playerSelection;
 let computerChoice;
@@ -45,6 +65,7 @@ function playRound(){
         return resultBox.textContent = `You have lost the game! Your score is ${playerScore} vs ${computerScore}`
     }
 
+    // im not particularly smart nor do i pretend to be. this works and thats all that matters. *copium*
     if(playerChoice === "rock" && computerChoice === "scissors"){
         ++playerScore;
         return resultBox.textContent = `You won. Your score is ${playerScore} vs ${computerScore}`;
